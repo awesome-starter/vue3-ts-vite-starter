@@ -11,13 +11,17 @@ You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffol
 你可以使用 [degit](https://github.com/Rich-Harris/degit) 之类的工具通过此模板来搭建你的项目。
 
 ```bash
-npx degit chengpeiquan/vite-vue3-ts-starter my-project
+npx degit awesome-starter/vite-vue3-ts-starter my-project
 
 cd my-project
 
 npm install
 npm run dev
 ```
+
+if use `npx` install `degit` fail, you can try to run `npm i -g degit` to install it globally.
+
+如果使用 `npx` 安装 `degit` 失败, 可以尝试运行 `npm i -g degit` 将它安装到全局。
 
 ## Why Use This Template
 
