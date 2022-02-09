@@ -15,7 +15,7 @@
     "backup": "git add . && git commit -m \"chore: save the coding progress\" && git push"
   },
   "dependencies": {
-    "vue": "^3.2.16",
+    "vue": "^3.2.30",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"
   },
