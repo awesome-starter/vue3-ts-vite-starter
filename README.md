@@ -6,30 +6,21 @@ This template should help you quickly create a Vue 3 project based on Vite, usin
 
 ## Usage
 
-You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with this template.
+You can use a tool like [create-preset](https://github.com/awesome-starter/create-preset) to scaffold your project with this template.
 
-你可以使用 [degit](https://github.com/Rich-Harris/degit) 之类的工具通过此模板来搭建你的项目。
+你可以使用 [create-preset](https://github.com/awesome-starter/create-preset) 之类的工具通过此模板来搭建你的项目。
 
 ```bash
-npx degit awesome-starter/vite-vue3-ts-starter my-project
-
-cd my-project
-
-npm install
-npm run dev
+npm create preset@latest init
 ```
-
-if use `npx` install `degit` fail, you can try to run `npm i -g degit` to install it globally.
-
-如果使用 `npx` 安装 `degit` 失败, 可以尝试运行 `npm i -g degit` 将它安装到全局。
 
 ## Why Use This Template
 
-Why not use [create vite](https://github.com/vitejs/vite/tree/main/packages/create-vite) to generate the basic template of the project?
+Why not use [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite) to generate the basic template of the project?
 
 Because the basic template only has the simplest basic configuration, and the actual production project requires a lot of additional tool dependencies to improve development efficiency.
 
-为什么不使用 [create vite](https://github.com/vitejs/vite/tree/main/packages/create-vite) 来生成项目的基础模板？
+为什么不使用 [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite) 来生成项目的基础模板？
 
 因为基础模板只有最简单的配置，而实际生产的项目里，需要很多额外的提高开发效率的工具依赖。
 
