@@ -1,9 +1,12 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from '@/App.vue'
 import router from '@/router'
-import store from '@/store'
 
 // 全局样式
 import '@less/global.less'
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App)
+  .use(createPinia()) // 启用 Pinia
+  .use(router)
+  .mount('#app')

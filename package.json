@@ -15,9 +15,9 @@
     "backup": "git add . && git commit -m \"chore: backup\" && git push"
   },
   "dependencies": {
+    "pinia": "^2.0.13",
     "vue": "^3.2.30",
-    "vue-router": "^4.0.14",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",

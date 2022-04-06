@@ -1,52 +1,92 @@
 <template>
   <h1>{{ msg }}</h1>
 
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
+  <ul>
+    <li>
+      Tutorial ☞
+      <a href="https://vue3.chengpeiquan.com/" target="_blank">
+        Learning Vue3
+      </a>
+    </li>
+    <li>
+      Official Website ☞
+      <a href="https://vuejs.org/" target="_blank">Vue3</a>
+      |
+      <a href="https://vitejs.dev/" target="_blank">Vite</a>
+    </li>
+  </ul>
+
+  <hr />
 
   <p>
-    See
-    <a href="https://vue3.chengpeiquan.com/" target="_blank"> Learning Vue3 </a>
-    for more information.
+    This is a message from
+    <a href="https://vue3.chengpeiquan.com/pinia.html" target="_blank">Pinia</a
+    >:
   </p>
+  <blockquote>
+    <p>{{ message }}</p>
+  </blockquote>
+  <button type="button" @click="store.updateMessageSync('New Message')">
+    <span>Update Message</span>
+  </button>
 
-  <p>
-    Click <router-link to="/foo">Here</router-link> to see a children router.
-  </p>
+  <hr />
 
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <ul>
+    <li>
+      Click <router-link to="/foo">Here</router-link> to see a children router.
+    </li>
+    <li>
+      <button type="button" @click="count++">count is: {{ count }}</button>
+    </li>
+    <li>
+      Edit
+      <code>components/HelloWorld.vue</code> to test hot module replacement.
+    </li>
+  </ul>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useMessageStore } from '@/stores'
+
 defineProps<{ msg: string }>()
-const count = ref(0)
+
+const count = ref<number>(0)
+const store = useMessageStore()
+const { message } = storeToRefs(store)
 </script>
 
 <style lang="less" scoped>
+ul {
+  li {
+    line-height: 2;
+  }
+}
+
+blockquote {
+  background-color: #eee;
+  padding: (@margin / 2);
+  border-radius: @radius;
+  p {
+    margin: 0;
+  }
+}
+
+hr {
+  width: 60%;
+  border-color: #eee;
+  margin: @margin auto;
+  opacity: 0.2;
+}
+
 a {
   color: #42b983;
 }
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
+p {
+  margin: 0;
 }
 
 code {
