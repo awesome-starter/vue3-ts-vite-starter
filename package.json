@@ -9,7 +9,7 @@
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "build:vite": "vite build",
-    "serve": "vite preview",
+    "preview": "vite preview",
     "lint": "eslint src --ext .js,.ts",
     "format": "prettier --write src",
     "backup": "git add . && git commit -m \"chore: backup\" && git push"
