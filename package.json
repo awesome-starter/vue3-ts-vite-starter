@@ -13,7 +13,7 @@
     "lint": "eslint src --ext .js,.ts",
     "format": "prettier --write src",
     "backup": "git add . && git commit -m \"chore: backup\" && git push",
-    "up": "npx npx npm-check-updates -u"
+    "up": "npx npm-check-updates -u"
   },
   "dependencies": {
     "pinia": "^2.0.13",
