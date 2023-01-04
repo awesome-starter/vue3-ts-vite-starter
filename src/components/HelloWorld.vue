@@ -66,9 +66,10 @@ ul {
 }
 
 blockquote {
-  background-color: #eee;
-  padding: (@margin / 2);
-  border-radius: @radius;
+  color: var(--c-black);
+  background-color: var(--c-gray);
+  padding: calc(var(--w-space) / 2);
+  border-radius: var(--w-radius-xs);
   p {
     margin: 0;
   }
@@ -76,8 +77,8 @@ blockquote {
 
 hr {
   width: 60%;
-  border-color: #eee;
-  margin: @margin auto;
+  border-color: var(--c-border);
+  margin: var(--w-space) auto;
   opacity: 0.2;
 }
 

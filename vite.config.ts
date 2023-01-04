@@ -3,7 +3,9 @@ import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import components from 'unplugin-vue-components/vite'
 import banner from 'vite-plugin-banner'
+import { manualChunks } from './scripts/build'
 import pkg from './package.json'
+
 const resolve = (dir: string): string => path.resolve(__dirname, dir)
 
 // https://vitejs.dev/config/
@@ -29,32 +31,13 @@ export default defineConfig({
     // },
   },
 
-  // build: {
-  //   rollupOptions: {
-  //     /**
-  //      * 如果要对比较大的组件库打包单独的 chunk，可以在这里配置
-  //      * @see https://rollupjs.org/guide/en/#outputmanualchunks
-  //      */
-  //     output: {
-  //       // 其中一种方式
-  //       manualChunks: {
-  //         'ant-design-vue': ['ant-design-vue'],
-  //         '@icon-park': ['@icon-park/vue-next'],
-  //       },
-
-  //       // 另外一种方式
-  //       // manualChunks(id) {
-  //       //   if (id.includes('node_modules')) {
-  //       //     return id
-  //       //       .toString()
-  //       //       .split('node_modules/')[1]
-  //       //       .split('/')[0]
-  //       //       .toString()
-  //       //   }
-  //       // },
-  //     },
-  //   },
-  // },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks,
+      },
+    },
+  },
 
   resolve: {
     /**
@@ -62,20 +45,12 @@ export default defineConfig({
      * @see https://cn.vitejs.dev/config/#resolve-alias
      */
     alias: {
-      // 兼容webpack的习惯
       '@': resolve('src'),
       '@img': resolve('src/assets/img'),
       '@less': resolve('src/assets/less'),
       '@libs': resolve('src/libs'),
       '@cp': resolve('src/components'),
       '@views': resolve('src/views'),
-      // 兼容webpack的静态资源
-      '~@': resolve('src'),
-      '~@img': resolve('src/assets/img'),
-      '~@less': resolve('src/assets/less'),
-      '~@libs': resolve('src/libs'),
-      '~@cp': resolve('src/components'),
-      '~@views': resolve('src/views'),
     },
   },
 
@@ -86,11 +61,10 @@ export default defineConfig({
      */
     // postcss: {
     //   plugins: [
-    //     // 使用 postcss-px2rem
+    //     // 使用 postcss-pxtorem
     //     // px2rem({
-    //     //   remUnit: 75,
+    //     //   propList: ['*'],
     //     // }),
-
     //     // 使用 postcss-px-to-viewport
     //     // px2vw({
     //     //   viewportWidth: 375,
@@ -98,20 +72,6 @@ export default defineConfig({
     //     // }),
     //   ],
     // },
-
-    /**
-     * 预处理器选项可以在这里配置
-     * @see https://cn.vitejs.dev/config/#css-preprocessoroptions
-     */
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-        modifyVars: {
-          'primary-color': '#1890ff',
-          hack: `true; @import '@less/config.less'`,
-        },
-      },
-    },
   },
 
   plugins: [
@@ -133,7 +93,14 @@ export default defineConfig({
      * @see https://github.com/chengpeiquan/vite-plugin-banner#advanced-usage
      */
     banner(
-      `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: v${pkg.description}\n * author: ${pkg.author}\n */`
+      [
+        `/**`,
+        ` * name: ${pkg.name}`,
+        ` * version: v${pkg.version}`,
+        ` * description: ${pkg.description}`,
+        ` * author: ${pkg.author}`,
+        ` */`,
+      ].join('\n')
     ),
   ],
 })

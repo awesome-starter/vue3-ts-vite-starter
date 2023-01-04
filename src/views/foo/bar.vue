@@ -16,8 +16,8 @@ import logo from '@img/logo.png'
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: @color-black;
-  margin-top: (@margin * 3);
+  color: var(--c-text);
+  margin-top: calc(var(--w-space) * 3);
   a {
     color: #42b983;
   }

@@ -8,22 +8,23 @@ body {
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-variant: tabular-nums;
+  background-color: var(--c-bg);
   margin: 0;
 }
 
 // 滚动条美化
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: lighten(@color-green, 10%);
+  background-color: #374151;
   border-radius: 4px;
   &:hover {
-    background-color: @color-green;
+    background-color: #1f2937;
   }
 }
 ::-webkit-scrollbar-track {
-  background-color: lighten(@color-gray, 35%);
+  background-color: #6b7280;
   border-radius: 4px;
 }

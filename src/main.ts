@@ -4,6 +4,8 @@ import App from '@/App.vue'
 import router from '@/router'
 
 // 全局样式
+import '@less/var.less'
+import '@less/mixin.less'
 import '@less/global.less'
 
 createApp(App)

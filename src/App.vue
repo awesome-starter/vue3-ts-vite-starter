@@ -5,9 +5,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { isMobile, watchResize } from '@bassist/utils'
 
 const route = useRoute()
-const key = computed(() =>
-  route.name ? String(route.name) + new Date() : String(route.path) + new Date()
-)
+const key = computed(() => `${String(route.name || route.path)}-${new Date()}`)
+
+watchResize(() => {
+  document.body.className = `platform-${isMobile() ? 'mobile' : 'desktop'}`
+})
 </script>
