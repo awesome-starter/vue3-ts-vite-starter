@@ -1,6 +1,7 @@
 name: sync-to-mirror
 
 on:
+  push:
   pull_request:
     branches: [master, main]
 
