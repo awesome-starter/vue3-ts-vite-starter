@@ -1,5 +1,5 @@
 {
-  "name": "ue3-ts-vite-starter",
+  "name": "vue3-ts-vite-starter",
   "version": "0.0.0",
   "description": "A template for Vue with TypeScript, base on Vite.",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
-    "build:vite": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .js,.ts",
     "format": "prettier --write src",
