@@ -14,5 +14,5 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
         with:
-          source-repo: git@github.com:awesome-starter/vue3-ts-vite-starter.git
+          source-repo: https://github.com/awesome-starter/vue3-ts-vite-starter.git
           destination-repo: git@gitee.com:awesome-starter/vue3-ts-vite-starter.git
