@@ -1,0 +1,17 @@
+name: sync-to-mirror
+
+on:
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:awesome-starter/vue3-ts-vite-starter.git
+          destination-repo: git@gitee.com:awesome-starter/vue3-ts-vite-starter.git
