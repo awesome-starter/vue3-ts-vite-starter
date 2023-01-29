@@ -13,7 +13,6 @@ jobs:
         uses: wearerequired/git-mirror-action@master
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         with:
           source-repo: git@github.com:awesome-starter/vue3-ts-vite-starter.git
           destination-repo: git@gitee.com:awesome-starter/vue3-ts-vite-starter.git
