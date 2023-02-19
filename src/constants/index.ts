@@ -18,5 +18,3 @@ export const APP_DESC = import.meta.env.VITE_APP_DESC
 
 // 本地存储前缀
 export const STORAGE_PREFIX = import.meta.env.VITE_STORAGE_PREFIX
-
-console.log(import.meta.env)
