@@ -1,12 +1,9 @@
 import { defineConfig, loadEnv } from 'vite'
-import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import components from 'unplugin-vue-components/vite'
 import banner from 'vite-plugin-banner'
 import { envDir, sourceDir, manualChunks } from './scripts/build'
 import pkg from './package.json'
-
-const resolve = (dir: string): string => path.resolve(__dirname, dir)
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -86,10 +83,11 @@ export default defineConfig(({ mode }) => {
 
     css: {
       /**
-       * 包括 vw / rem 单位转换等
+       * 包括 `vw` / `rem` 单位转换等
        * @see https://cn.vitejs.dev/config/shared-options.html#css-postcss
        *
        * @example
+       *  以使用 `vw` 作为移动端适配为例：
        *  1. 先安装 postcss 依赖 `npm i -D postcss-px-to-viewport`
        *  2. 导入本文件 `import px2vw from 'postcss-px-to-viewport'`
        *  3. 取消下面函数的注释即可生效
@@ -110,17 +108,29 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
+      /**
+       * 支持 `.vue` 文件的解析
+       */
       vue(),
+
+      /**
+       * 如果需要支持 `.tsx` 组件，请安装 `@vitejs/plugin-vue-jsx` 这个包
+       * 并在这里添加一个插件导入 `import vueJsx from '@vitejs/plugin-vue-jsx'`
+       */
+      // vueJsx(),
 
       /**
        * 自动导入组件，不用每次都 import
        * @see https://github.com/antfu/unplugin-vue-components#configuration
        */
       components({
-        dirs: [resolve('src/components')],
-        extensions: ['vue', 'ts'],
+        dirs: ['src/components'],
+        directoryAsNamespace: true,
+        collapseSamePrefixes: true,
+        globalNamespaces: [],
+        extensions: ['vue', 'ts', 'tsx'],
         deep: true,
-        dts: false,
+        dts: 'src/types/declaration-files/components.d.ts',
       }),
 
       /**
