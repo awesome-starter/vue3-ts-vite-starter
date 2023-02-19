@@ -1,55 +1,22 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
+    "useDefineForClassFields": true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
     "baseUrl": "./",
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@img/*": [
-        "src/assets/img/*"
-      ],
-      "@less/*": [
-        "src/assets/less/*"
-      ],
-      "@css/*": [
-        "src/assets/css/*"
-      ],
-      "@fonts/*": [
-        "src/assets/fonts/*"
-      ],
-      "@libs/*": [
-        "src/libs/*"
-      ],
-      "@cp/*": [
-        "src/components/*"
-      ],
-      "@views/*": [
-        "src/views/*"
-      ],
-      "@plugins/*": [
-        "src/plugins/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

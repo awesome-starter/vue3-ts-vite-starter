@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@views/home.vue'),
+    component: () => import('@/views/home.vue'),
     meta: {
       title: 'Home',
     },
@@ -22,7 +22,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/foo',
     name: 'foo',
-    component: () => import('@cp/TransferStation.vue'),
+    component: () => import('@/components/TransferStation.vue'),
     meta: {
       title: 'Foo',
     },
@@ -33,7 +33,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'bar',
         name: 'bar',
-        component: () => import('@views/foo/bar.vue'),
+        component: () => import('@/views/foo/bar.vue'),
         meta: {
           title: 'Bar',
         },
