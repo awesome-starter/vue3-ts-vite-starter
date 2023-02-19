@@ -23,6 +23,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@bassist/progress": "^0.2.0",
     "@bassist/utils": "^0.10.0",
     "pinia": "^2.0.30",
     "vue": "^3.2.47",
