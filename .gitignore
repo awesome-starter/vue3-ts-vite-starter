@@ -24,3 +24,7 @@ lerna-debug.log*
 *.rar
 *.7z
 *.tar
+
+# 全局组件声明
+# 每次启动服务或打包都会生成最新的，所以无需传到 Git 上
+components.d.ts
