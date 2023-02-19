@@ -23,13 +23,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { isDark as isDarkMode } from '@bassist/utils'
+import { useStorage } from '@/hooks'
 import type { PrefersColorScheme } from '@bassist/utils'
 
+const { storage } = useStorage()
 const STORAGE_KEY = 'theme-appearance'
 const isDark = ref<boolean>(isDarkMode())
 
 function getLocalTheme() {
-  return window.localStorage.getItem(STORAGE_KEY)
+  return storage.get(STORAGE_KEY)
 }
 const defaultThemeIsDark = getLocalTheme()
   ? getLocalTheme() === 'dark'
@@ -37,7 +39,7 @@ const defaultThemeIsDark = getLocalTheme()
 
 function updateTheme(isDarkTheme: boolean) {
   const newTheme: PrefersColorScheme = isDarkTheme ? 'dark' : 'light'
-  window.localStorage.setItem(STORAGE_KEY, newTheme)
+  storage.set(STORAGE_KEY, newTheme)
   isDark.value = newTheme === 'dark'
 
   const root = document.querySelector('html')
