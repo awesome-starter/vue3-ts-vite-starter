@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@bassist/progress": "^0.2.1",
+    "@bassist/uno": "^0.1.0",
     "@bassist/utils": "^0.12.0",
     "pinia": "^2.1.4",
     "vue": "^3.3.4",
@@ -43,6 +44,7 @@
     "prettier": "^3.0.0",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.1.6",
+    "unocss": "^0.54.1",
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.3",
     "vite-plugin-banner": "^0.7.0",

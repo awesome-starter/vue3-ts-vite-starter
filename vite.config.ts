@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import components from 'unplugin-vue-components/vite'
+import unocss from 'unocss/vite'
 import banner from 'vite-plugin-banner'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { envDir, sourceDir, manualChunks } from './scripts/build'
@@ -135,6 +136,12 @@ export default defineConfig(({ mode }) => {
       }),
 
       /**
+       * 开箱即用的 Tailwind CSS 风格原子类引擎
+       * @see https://unocss.dev/integrations/vite
+       */
+      unocss(),
+
+      /**
        * 版权注释
        * @see https://github.com/chengpeiquan/vite-plugin-banner#advanced-usage
        */
@@ -146,7 +153,7 @@ export default defineConfig(({ mode }) => {
           ` * description: ${pkg.description}`,
           ` * author: ${pkg.author}`,
           ` */`,
-        ].join('\n')
+        ].join('\n'),
       ),
 
       /**
