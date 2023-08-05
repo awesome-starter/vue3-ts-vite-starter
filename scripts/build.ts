@@ -2,10 +2,15 @@ import { resolve } from 'path'
 import { cwd } from 'process'
 import pkg from '../package.json'
 
+const whitelist = ['vue']
+
 function getManualChunks() {
   const manualChunks = {}
   for (const key in pkg.dependencies) {
-    if (Object.prototype.hasOwnProperty.call(pkg.dependencies, key)) {
+    if (
+      Object.prototype.hasOwnProperty.call(pkg.dependencies, key) &&
+      !whitelist.includes(key)
+    ) {
       manualChunks[key] = [key]
     }
   }
