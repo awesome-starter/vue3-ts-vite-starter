@@ -30,6 +30,7 @@
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@bassist/tsconfig": "^0.1.0",
     "@bassist/uno": "^0.1.1",
     "@types/node": "^20.4.7",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
