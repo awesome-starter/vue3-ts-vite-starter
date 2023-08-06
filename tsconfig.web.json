@@ -1,7 +1,11 @@
 {
   "extends": "@bassist/tsconfig/web.json",
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

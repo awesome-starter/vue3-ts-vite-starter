@@ -23,8 +23,8 @@ dependencies:
 
 devDependencies:
   '@bassist/tsconfig':
-    specifier: ^0.1.0
-    version: 0.1.0
+    specifier: ^0.1.1
+    version: 0.1.1
   '@bassist/uno':
     specifier: ^0.1.1
     version: 0.1.1(unocss@0.54.1)
@@ -142,8 +142,8 @@ packages:
       nprogress: 0.2.0
     dev: false
 
-  /@bassist/tsconfig@0.1.0:
-    resolution: {integrity: sha512-QrB9HEZg4c0jgwDqjV75pEPW2xNq6sDWWULXFHm3CnFTRsX2WvREov8kk2fka1IGNdi/Pfq6y9UA12iBFqQTTw==}
+  /@bassist/tsconfig@0.1.1:
+    resolution: {integrity: sha512-taV8Afet71n5xUGVBqasQAXjjAUdduN9sV0U7bdQJml0cvFT7o8xmk/yQ+7A2wjVZcjOiDQ7cljqQ9E/9rR4YQ==}
     dev: true
 
   /@bassist/uno@0.1.1(unocss@0.54.1):
