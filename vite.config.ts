@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import unocss from 'unocss/vite'
 import banner from 'vite-plugin-banner'
@@ -19,12 +20,14 @@ export default defineConfig(({ mode }) => {
 
     /**
      * 项目部署目录路径
+     *
      * @description 见项目根目录下的 `config` 文件夹说明
      */
     base: env.VITE_DEPLOY_BASE_URL,
 
     /**
      * 本地开发服务，也可以配置接口代理
+     *
      * @see https://cn.vitejs.dev/config/#server-proxy
      */
     server: {
@@ -45,6 +48,7 @@ export default defineConfig(({ mode }) => {
            * 如果要加密打包后的文件名，可以启用该项目
            *
            * @example
+           *
            *  1. 先安装 md5 依赖 `npm i -D @withtypes/md5`
            *  2. 导入本文件 `import md5 from '@withtypes/md5'`
            *  3. 将函数里的 `${name}` 修改为 `${md5(name)}`
@@ -74,6 +78,7 @@ export default defineConfig(({ mode }) => {
        * @see https://cn.vitejs.dev/config/shared-options.html#resolve-alias
        *
        * @example
+       *
        *  想从 `src/libs/foo` 文件里导入功能：
        *  配置 alias 前： `import foo from '../../../libs/foo'`
        *  配置 alias 后： `import foo from '@/libs/foo'`
@@ -86,13 +91,15 @@ export default defineConfig(({ mode }) => {
     css: {
       /**
        * 包括 `vw` / `rem` 单位转换等
+       *
        * @see https://cn.vitejs.dev/config/shared-options.html#css-postcss
        *
        * @example
+       *
        *  以使用 `vw` 作为移动端适配为例：
-       *  1. 先安装 postcss 依赖 `npm i -D postcss-px-to-viewport`
-       *  2. 导入本文件 `import px2vw from 'postcss-px-to-viewport'`
-       *  3. 取消下面函数的注释即可生效
+       *    1. 先安装 postcss 依赖 `npm i -D postcss-px-to-viewport`
+       *    2. 导入本文件 `import px2vw from 'postcss-px-to-viewport'`
+       *    3. 取消下面函数的注释即可生效
        */
       // postcss: {
       //   plugins: [
@@ -122,7 +129,25 @@ export default defineConfig(({ mode }) => {
       // vueJsx(),
 
       /**
+       * 自动导入 API ，不用每次都 import
+       *
+       * @tips 如果直接使用没导入的 API 依然提示报错，请重启 VS Code
+       *
+       * @see https://github.com/antfu/unplugin-auto-import#configuration
+       */
+      autoImport({
+        imports: ['vue', 'vue-router', 'pinia'],
+        dts: 'src/types/declaration-files/auto-import.d.ts',
+        eslintrc: {
+          enabled: true,
+          filepath: './.eslintrc-auto-import.json',
+          globalsPropValue: true,
+        },
+      }),
+
+      /**
        * 自动导入组件，不用每次都 import
+       *
        * @see https://github.com/antfu/unplugin-vue-components#configuration
        */
       components({
@@ -137,12 +162,14 @@ export default defineConfig(({ mode }) => {
 
       /**
        * 开箱即用的 Tailwind CSS 风格原子类引擎
+       *
        * @see https://unocss.dev/integrations/vite
        */
       unocss(),
 
       /**
        * 版权注释
+       *
        * @see https://github.com/chengpeiquan/vite-plugin-banner#advanced-usage
        */
       banner(
@@ -158,6 +185,7 @@ export default defineConfig(({ mode }) => {
 
       /**
        * 为入口文件增加 EJS 模版能力
+       *
        * @see https://github.com/vbenjs/vite-plugin-html/blob/main/README.zh_CN.md
        */
       createHtmlPlugin({

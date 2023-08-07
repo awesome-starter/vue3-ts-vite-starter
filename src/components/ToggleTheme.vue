@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { isDark as isDarkMode } from '@bassist/utils'
 import { useStorage } from '@/hooks'
 import type { PrefersColorScheme } from '@bassist/utils'

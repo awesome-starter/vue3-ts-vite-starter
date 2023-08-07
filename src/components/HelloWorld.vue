@@ -47,8 +47,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { storeToRefs } from 'pinia'
 import { useMessageStore } from '@/stores'
 
 defineProps<{ msg: string }>()
