@@ -2,7 +2,9 @@
   <div class="content">
     <img alt="Vue logo" :src="logo" />
     <p>This is a children router.</p>
-    <router-link to="/">Go Back</router-link>
+    <router-link to="/">
+      <span>Go Back</span>
+    </router-link>
   </div>
 </template>
 

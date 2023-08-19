@@ -20,8 +20,8 @@
 
   <p>
     This is a message from
-    <a href="https://vue3.chengpeiquan.com/pinia.html" target="_blank">Pinia</a
-    >:
+    <a href="https://vue3.chengpeiquan.com/pinia.html" target="_blank">Pinia</a>
+    :
   </p>
   <blockquote>
     <p>{{ message }}</p>
@@ -34,10 +34,16 @@
 
   <ul>
     <li>
-      Click <router-link to="/foo">Here</router-link> to see a children router.
+      Click
+      <router-link to="/foo">
+        <span>Here</span>
+      </router-link>
+      to see a children router.
     </li>
     <li>
-      <button type="button" @click="count++">count is: {{ count }}</button>
+      <button type="button" @click="count++">
+        <span>count is: {{ count }}</span>
+      </button>
     </li>
     <li>
       Edit
