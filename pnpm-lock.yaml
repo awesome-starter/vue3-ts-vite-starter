@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^0.1.1
     version: 0.1.1
   '@bassist/uno':
-    specifier: ^0.1.2
-    version: 0.1.2(unocss@0.55.2)
+    specifier: ^0.1.3
+    version: 0.1.3(unocss@0.55.2)
   '@types/node':
     specifier: ^20.5.1
     version: 20.5.1
@@ -189,10 +189,10 @@ packages:
     resolution: {integrity: sha512-taV8Afet71n5xUGVBqasQAXjjAUdduN9sV0U7bdQJml0cvFT7o8xmk/yQ+7A2wjVZcjOiDQ7cljqQ9E/9rR4YQ==}
     dev: true
 
-  /@bassist/uno@0.1.2(unocss@0.55.2):
-    resolution: {integrity: sha512-We3vTQbGOW8qUq1caKjOJskW2RpEG9eP9NTnD7k66mJ1M/f6CUNu7Vq41TXqOsN0nWCUCTkQ2iB3XAfk3l/QHA==}
+  /@bassist/uno@0.1.3(unocss@0.55.2):
+    resolution: {integrity: sha512-iDXMECLw1aZyJMtG2TfsEAuoTh7F2ODeIJJg/ofAEpyisRO0JyGC4u8dmLYyA9Arqu12o3pGLSppOJxnN0wXDg==}
     peerDependencies:
-      unocss: ^0.54.1
+      unocss: '>=0.54.1'
     dependencies:
       unocss: 0.55.2(postcss@8.4.27)(vite@4.4.9)
     dev: true
