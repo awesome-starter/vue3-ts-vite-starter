@@ -124,9 +124,24 @@ export default defineConfig(({ mode }) => {
 
       /**
        * 如果需要支持 `.tsx` 组件，请安装 `@vitejs/plugin-vue-jsx` 这个包
+       * 在命令行运行安装命令 `npm i -D @vitejs/plugin-vue-jsx`
        * 并在这里添加一个插件导入 `import vueJsx from '@vitejs/plugin-vue-jsx'`
+       *
+       * @see https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx
        */
       // vueJsx(),
+
+      /**
+       * 如果需要兼容低版本浏览器，请安装 `@vitejs/plugin-legacy` 这个包
+       * 同时还需要安装 `terser` 包，因为旧版插件使用 Terser 进行混淆和压缩。
+       * 在命令行运行安装命令 `npm i -D @vitejs/plugin-vue-jsx terser`
+       * 并在这里添加一个插件导入 `import legacy from '@vitejs/plugin-legacy'`
+       *
+       * @see https://github.com/vitejs/vite/tree/main/packages/plugin-legacy
+       */
+      // legacy({
+      //   targets: ['defaults', 'not IE 11'],
+      // }),
 
       /**
        * 自动导入 API ，不用每次都 import
@@ -162,6 +177,8 @@ export default defineConfig(({ mode }) => {
 
       /**
        * 开箱即用的 Tailwind CSS 风格原子类引擎
+       *
+       * @description 配置文件见 `uno.config.ts`
        *
        * @see https://unocss.dev/integrations/vite
        */
