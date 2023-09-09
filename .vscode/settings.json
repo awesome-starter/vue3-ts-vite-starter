@@ -1,4 +1,12 @@
 {
-  "cSpell.words": ["Avenir", "devapi", "Pinia", "Vite", "withtypes"],
+  "cSpell.words": [
+    "Avenir",
+    "devapi",
+    "Persistedstate",
+    "Pinia",
+    "pxtorem",
+    "Vite",
+    "withtypes"
+  ],
   "eslint.experimental.useFlatConfig": true
 }
