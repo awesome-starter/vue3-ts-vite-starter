@@ -4,16 +4,21 @@ import pkg from '../package.json'
 
 const whitelist = ['vue']
 
+type ChunkKey = keyof typeof pkg.dependencies
+
 function getManualChunks() {
-  const manualChunks = {}
+  const manualChunks = {} as Record<ChunkKey, [ChunkKey]>
+
   for (const key in pkg.dependencies) {
     if (
       Object.prototype.hasOwnProperty.call(pkg.dependencies, key) &&
       !whitelist.includes(key)
     ) {
-      manualChunks[key] = [key]
+      const k = key as ChunkKey
+      manualChunks[k] = [k]
     }
   }
+
   return manualChunks
 }
 
