@@ -10,6 +10,7 @@ export default defineConfig([
     rules: {
       // By default, this rule is `off`
       // 'vue/component-tags-order': 'error',
+      '@unocss/order': 'off',
     },
     ignores: ['dist'],
   },
