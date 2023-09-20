@@ -21,7 +21,7 @@
     "mirror:rm": "npm config rm registry",
     "backup": "git add . && git commit -m \"chore: backup\" && git push",
     "up": "npx npm-check-updates -u",
-    "prepare": "simple-git-hooks"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@bassist/progress": "^0.2.2",
@@ -37,10 +37,10 @@
     "@types/node": "^20.6.0",
     "@vitejs/plugin-vue": "^4.3.4",
     "eslint": "^8.49.0",
+    "husky": "^8.0.0",
     "less": "^4.2.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
-    "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
     "unocss": "^0.55.7",
     "unplugin-auto-import": "^0.16.6",
@@ -49,9 +49,6 @@
     "vite-plugin-banner": "^0.7.0",
     "vite-plugin-html": "^3.2.0",
     "vue-tsc": "^1.8.10"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged --concurrent false"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
