@@ -92,6 +92,11 @@ export default defineConfig(({ mode }) => {
       /**
        * 包括 `vw` / `rem` 单位转换等
        *
+       * @description 请注意：
+       *  当前已预装了 Uno CSS ，默认以 `rem` 为单位自动适配（根字号为 `16px` ）
+       *  所以一般情况下不需要再安装这些转换插件，如果同时使用 REM 插件和 UNO ，
+       *  可能会因为 Root 的 Font Size 被重新设置而导致样式错乱！
+       *
        * @see https://cn.vitejs.dev/config/shared-options.html#css-postcss
        *
        * @example
@@ -134,7 +139,7 @@ export default defineConfig(({ mode }) => {
       /**
        * 如果需要兼容低版本浏览器，请安装 `@vitejs/plugin-legacy` 这个包
        * 同时还需要安装 `terser` 包，因为旧版插件使用 Terser 进行混淆和压缩。
-       * 在命令行运行安装命令 `npm i -D @vitejs/plugin-vue-jsx terser`
+       * 在命令行运行安装命令 `npm i -D @vitejs/plugin-legacy terser`
        * 并在这里添加一个插件导入 `import legacy from '@vitejs/plugin-legacy'`
        *
        * @see https://github.com/vitejs/vite/tree/main/packages/plugin-legacy
